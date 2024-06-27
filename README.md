@@ -20,3 +20,5 @@
 
 ### 3. 목차
 > 목차는 `document` 폴더를 기준으로 작성됩니다.
+
+1. [About JAVA](https://github.com/InmookJeong/learn-java/tree/main/document/1.About_JAVA)
