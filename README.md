@@ -1,8 +1,8 @@
 # About learn-java Repository
 
-> learn-java의 `document`에 작성된 개념은 [노션(Notion)에 작성된 글](https://mook-story.notion.site/JAVA-2e09b3121e524a7c8a827db0e21cda47?pvs=74)과 공유됩니다.
+> learn-java의 `document`에 작성된 개념은 <a href="https://mook-story.notion.site/JAVA-2e09b3121e524a7c8a827db0e21cda47?pvs=74" target="_blank">노션(Notion)에 작성된 글</a>과 공유됩니다.
 >
-> [노션 바로가기 : https://mook-story.notion.site/JAVA-2e09b3121e524a7c8a827db0e21cda47?pvs=74](https://mook-story.notion.site/JAVA-2e09b3121e524a7c8a827db0e21cda47?pvs=74)
+> <a href="https://mook-story.notion.site/JAVA-2e09b3121e524a7c8a827db0e21cda47?pvs=74" target="_blank">노션 바로가기 : https://mook-story.notion.site/JAVA-2e09b3121e524a7c8a827db0e21cda47?pvs=74</a>
 
 ### 1. learn-java Repository의 목적
 - Java 프로그래밍 언어의 구조와 제공되는 기능에 대한 개념 정리
