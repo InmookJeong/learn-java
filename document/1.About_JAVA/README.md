@@ -50,7 +50,7 @@ JDK Beta|1995|Java first release
 JDK 1.0|1996. 01|정식 버전 Release
 JDK 1.1|1997. 02|Java Beans<br/>JDBC<br/>RMI<br/>직렬화
 JDK 1.2|1998. 12|Swing GUI API<br/>JVM에 JIT 컴파일러 탑재<br/>Java IDL<br/>Collection Framework
-JDK 1.3|2000. 05|자바 플랫폼 디버거 아키텍쳐(JPDA)<br/>합송 프록시 클래스
+JDK 1.3|2000. 05|자바 플랫폼 디버거 아키텍쳐(JPDA)<br/>합성 프록시 클래스
 JDK 1.5|2004. 09|Generic<br/>Metadata(Annotation)<br/>Autoboxing/unboxing<br/>Enum<br/>Varargs<br/>향상된 for문<br/>다중 Thread<br/>Scanner Class
 JDK 7|2011. 07|try-statement(try-with-resources)의 자동 리소스 관리<br/>Instance 생성을 위한 향상된 유형 추론(다이아몬드 연산자 <>)<br/>간소화 된 Varargs 메서드<br/>이진 정수 리터럴<br/>새로운 파일 I/O 라이브러리
 JDK 8|2014. 03|LTS(Long Term Support) Version<br/>Rambda<br/>Stream<br/>Optional
