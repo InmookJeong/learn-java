@@ -22,3 +22,6 @@
 > 목차는 `document` 폴더를 기준으로 작성됩니다.
 
 1. [About JAVA](https://github.com/InmookJeong/learn-java/tree/main/document/1.About_JAVA)
+2. [JDK와 JRE](https://github.com/InmookJeong/learn-java/tree/main/document/2.JDK_JRE)
+3. [JDK 버전 별 특징](https://github.com/InmookJeong/learn-java/tree/main/document/3.JDK_Features)
+    1. [JDK 5](https://github.com/InmookJeong/learn-java/tree/main/document/3.JDK_Features/jdk5)
