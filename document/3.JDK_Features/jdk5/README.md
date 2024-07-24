@@ -97,6 +97,60 @@
         7 Set<String> s = Collections.checkedSet(new HashSet<String>(), String.class);
     ```
 
+### 향상된 for문
+- 먼저 JDK 1.5 버전이 출시되기 이전의 for문을 보겠습니다.
+    ```java
+        // 1. Documentation에 나온 for문
+        1 void cancelAll(Collection<TimerTask> c) {
+        2    for(Iterator<TimerTask> i = c.iterator(); i.hasNext();) {
+        3        i.next().cancel();
+        4    }
+        5 }
+
+        // 2. 많이 작성하는 for문
+        6 for(int i=0; i < c.size(); i++) {
+        7    TimerTask timerTask = c.get(i);
+        8    timerTask.cancel();
+        9 }
+    ```
+- 제가 Document를 잘 이해한 것인지는 모르겠지만...
+- 1번 반복문에서 변수 i가 3번 사용되었죠?
+- 초기화를 위해 처음 선언된 i를 빼고 2번 더 선언되는 동안 `개발자의 변수명 작성 실수로 오류가 발생`할 수 있습니다.
+- 2번 반목문도 마찬가지죠.
+- 이미 변수 i가 4번 사용되었는데 초기화를 위한 변수 i를 제외하고 3번 더 작성하는 동안 동일한 문제로 오류가 발생할 수 있습니다.
+
+- 그럼 소스코드를 작성할 때 `변수 사용을 최소화하면 오류 발생 가능성도 줄어들지 않을까요?`
+- `향상된 for문가 이런 문제를 해결`해줍니다.
+- 그럼 향상된 for문은 어떻게 작성되는지 볼까요?
+    ```java
+        // 1. Documentation에 나온 for문
+        // 물론 실무에서도 아래와 같이 작성해요.
+        1 void cancelAll(Collection<TimerTask> c) {
+        2    for(TimerTask timerTask : c) {
+        3        timerTask.cancel();
+        4    }
+        5 }
+    ```
+- 어떤가요? 소스코드가 정말 간결하지 않나요?
+- 향상된 for문에서 `콜론(:)은 in이라고 읽는다`고 해요.
+    - 즉, 위에 코드를 설명할 때에는 `"for each TimerTask in c"`라고 읽으면 됩니다.
+- 향상된 for문을 이용하면 변수 선언 횟수가 확실히 줄어듭니다.
+- 그만큼 효율적으로 개발할 수 있다는 것이겠죠.
+- 다만 소스코드가 실행할 때에는 컴파일러가 이전의 for문으로 변환합니다.
+- 결국 for문의 작성 방식이 개발자 친화적일 뿐 실제로 동작하는 방식은 동일합니다.
+- 그래도 Collections뿐만 아니라 배열도 향상된 for문을 활용하여 데이터를 조작할 수 있으니
+- 안정적인 소스코드 구현을 위해 향상된 for문을 사용해봅시다.
+    ```java
+        // 배열의 향상된 for문 활용
+        1 int sum(int[] numberArray) {
+        2    int result = 0;
+        3    for (int number : numberArray)
+        4        result += number;
+        5    return result;
+        6 }
+    ```
 
 ### 참고
 - JDK 5.0 Documentation : https://docs.oracle.com/javase/1.5.0/docs/
+- Generics : https://docs.oracle.com/javase/1.5.0/docs/guide/language/generics.html
+- 향상된 for문 : https://docs.oracle.com/javase/1.5.0/docs/guide/language/foreach.html
