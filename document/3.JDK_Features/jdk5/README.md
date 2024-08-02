@@ -223,7 +223,7 @@
         16      // Integer Type의 데이터를 int Type으로 자동 형변환
         17      int value = num; // Auto-unboxing
         18      System.out.println("value : " + value);
-        198 }
+        19 }
         20 // 출력 결과
         21 // value : 1
         22 // value : 2
