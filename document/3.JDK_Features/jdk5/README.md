@@ -150,6 +150,89 @@
         6 }
     ```
 
+### Autoboxing and unboxing
+- Java 프로그래머라면 `Collection에 Primitive Type의 데이터를 넣을 수 없다`는 것을 알고 있을거에요.
+- 쉽게 말해서 List 객체에 int, long, double, char, boolean 타입의 데이터를 넣을 수 없다는 것을 의미해요.
+    ```java
+        // Error 발생 : Type argument cannot be of primitive type
+        // int 타입을 List 객체에 저장할 수 없어요.
+        List<int> numbers = new ArrayList<int>();
+    ```
+- 그럼 `Collection에 넣을 수 있는 데이터는` 어떤 데이터일까요?
+- 당연히 `Reference Type의 데이터`를 넣을 수 있겠죠.
+- 그러나 개발을 하다보면 숫자로 구성된 List를 만들어야 할 때가 생겨요.
+- 이럴 때에는 어떻게 해야 할까요? List에는 Reference Type의 데이터만 저장할 수 있으니 과감하게 포기해야 할까요?
+- Java는 이런 문제를 해결해주기 위해 `Wrapper Class`를 제공하고 있답니다.
+- int Type의 데이터는 Integer로, double Type의 데이터는 Double로, boolean Type의 데이터는 Boolean으로!
+- 데이터를 Wrapper Class로 한 번 더 감싸주기 때문에 `Boxing`한다고 말해요.
+- 그럼 반대로 Integer Type의 데이터를 int Type으로 변환해주는 것을 `Unboxing`이라고 하겠죠?
+
+- JDK 1.5 버전이 출시되기 전에는 int Type의 데이터를 Integer Type의 데이터로 변환하려면 다음과 같이 작성을 했어요.
+    ```java
+        int one = 1;
+        // int Type의 데이터를 Integer Type으로 변환하기
+        Integer number = Integer.valueOf(one);
+    ```
+- 그리고 Integer Type의 데이터를 int Type으로 꺼내려면 다음과 같이 작성했어요.
+    ```java
+        // number의 값을 int Type으로 가져오기
+        int numberValue = number.intValue();
+    ```
+- 당연히 List에 int Type의 데이터를 저장하고 꺼내기 위해 아래와 같이 작성해야겠죠?
+    ```java
+        1 List<Integer> numbers = new ArrayList<Integer>();
+        2 int one = 1, two = 2;
+        3 // int Type의 데이터를 Integer Type으로 변환
+        4 Integer number1 = Integer.valueOf(one);    // boxing
+        5 Integer number2 = Integer.valueOf(two);    // boxing
+        6 // Integer Type의 데이터를 List에 저장
+        7 numbers.add(number1);
+        8 numbers.add(number2);
+        9 System.out.println("numbers : " + numbers.toString());
+            // 출력 결과
+            // numbers : [1, 2]
+        10
+        11 for(Integer num : numbers) {
+        12      int value = num.intValue(); // unboxing
+        13      System.out.println("value : " + value);
+        14 }
+            // 출력 결과
+            // value : 1
+            // value : 2
+    ```
+- 매번 데이터를 Boxing하고 Unboxing 해야하는 불편함이 있죠.
+- JDK 1.5 버전에서는 이런 불편함을 모두 해소했습니다!
+- 바로 Autoboxing, Autounboxing 기능을 제공하기 때문이죠.
+- 그럼 어떻게 변경되었는지 볼까요?
+    ```java
+         1 List<Integer> numbers = new ArrayList<Integer>();
+         2 int one = 1, two = 2;
+         3 
+         4 // int Type의 데이터를 Integer Type으로 자동 형변환
+         5 Integer number1 = one;    // Auto-boxing
+         6 Integer number2 = two;    // Auto-boxing
+         7 
+         8 // Integer Type의 데이터를 List에 저장
+         9 numbers.add(number1);
+        10 numbers.add(number2);
+        11 System.out.println("numbers : " + numbers.toString());
+        12 // 출력 결과
+        13 // numbers : [1, 2]
+        14
+        15 for(Integer num : numbers) {
+        16      // Integer Type의 데이터를 int Type으로 자동 형변환
+        17      int value = num; // Auto-unboxing
+        18      System.out.println("value : " + value);
+        198 }
+        20 // 출력 결과
+        21 // value : 1
+        22 // value : 2
+    ```
+- 어떤가요? JDK 1.5 버전이 출시되기 전의 소스코드와 결과가 똑같죠?
+- 하지만 valueOf(), intValue()와 같이 Integer Type으로 Boxing하거나 int Type으로 Unboxing하기 위한 메소드를 사용하지 않아도 되요!
+- 소스코드가 더 간결해지고 사용하기 쉬워졌죠?
+- 다만 `성능이 중요한 기능에 적용할 때에는 성능 저하 우려가 있다`고 하니까 주의해서 사용합시다!
+
 ### 참고
 - JDK 5.0 Documentation : https://docs.oracle.com/javase/1.5.0/docs/
 - Generics : https://docs.oracle.com/javase/1.5.0/docs/guide/language/generics.html
