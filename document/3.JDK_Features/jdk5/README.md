@@ -1,7 +1,7 @@
 # JDK 5
 
 > <b>개요</b>
-- _`JDK 5`_ 버전은 2024년 9월에 출시된 Java Development Kit입니다.
+- _`JDK 5`_ 버전은 2004년 9월에 출시된 Java Development Kit입니다.
 - JDK 5를 정확히 표현하자면 Java 2 Platform Standard Edition(J2SE) 5.0 Development Kit이라고 하며
 - Product version을 기준으로 JDK 5.0, Developer version 기준으로 1.5.0이라고 불립니다.
 - _`JDK 5`_ 버전이 출시되며 `Generics`, `향상된 for Loop`, `Autoboxing/Unboxing`, `Enum`, `Varargs`, `Static Import`, `Metadata` 등의 기능이 추가되었는데
