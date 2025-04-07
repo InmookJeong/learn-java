@@ -105,11 +105,9 @@
 
 <br/>
 
-<div style="text-align:center;font-weight:bold;color:red;font-size:2rem;">
-Write Once, Run Every Where!
-</div>
+### ☆ Write Once, Run Every Where! ☆
  
-<br/>
+<br/><br/>
 
 ### 분산 환경 지원
 
